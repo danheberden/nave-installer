@@ -1,33 +1,34 @@
-LIB_NAVE="/usr/local/lib/nave.sh"
-BIN_NAVE="/usr/local/bin/nave"
-GIT_NAVE="https://raw.github.com/isaacs/nave/master/nave.sh"
+lib_nave="/usr/local/lib/nave.sh"
+bin_nave="/usr/local/bin/nave"
+git_nave="https://raw.github.com/isaacs/nave/master/nave.sh"
 
-echo "##########################################################################"
 echo "Installing nave..."
 echo "See http://github.com/isaacs/nave for more information"
-echo ""
-if [ -f "$BIN_NAVE" ]; then
-  echo "$BIN_NAVE already exists."
+echo 
+if [ -f "$bin_nave" ]; then
+  echo "$bin_nave already exists."
   echo "Stopping installation."
 else
   echo "Installing nave like a boss"
-  echo -e "#!/bin/bash\n
-           USER=\`whoami\`;
-           if [[ \"\$1\" == \"update\" ]]; then
-             echo 'Downloading latest nave.sh from github.com';
-             curl -o $LIB_NAVE $GIT_NAVE 2>&1;
-             chmod +x $LIB_NAVE;
-           else
-             if [[ \"\$USER\" == \"root\" ]]; then
-               sudo $LIB_NAVE \$*;
-             else
-               $LIB_NAVE \$*;
-             fi;
-           fi; " > "$BIN_NAVE";
-  chmod +x "$BIN_NAVE"
+  cat > "$bin_nave" <<BASH
+#!/bin/bash
+user=$(whoami)
+if [[ "\$1" == "update" ]]; then
+ echo 'Downloading latest nave.sh from github.com';
+ curl -# -o $lib_nave $git_nave;
+ chmod +x $lib_nave;
+else
+ if [[ "\$USER" == "root" ]]; then
+   sudo $lib_nave \$*;
+ else
+   $lib_nave \$*;
+ fi;
+fi;
+BASH
+  chmod +x "$bin_nave"
   nave update
   echo ""
-  echo "To update nave, just run \`nave update\`"
+  echo -ne "To update nave, just run \033[1;32mnave update\033[0m"
   echo ""
   echo "ALL DONE!"
 fi
