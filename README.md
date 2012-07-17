@@ -1,6 +1,6 @@
 # Nave Installer
 
-Installs nave easily and makes it globally accesible. Also adds `nave
+Installs [nave](http://github.com/isaacs/nave) easily and makes it globally accesible. Also adds `nave
 update` to get the latest nave.sh from github.com
 
 # To use
