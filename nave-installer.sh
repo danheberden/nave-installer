@@ -2,7 +2,7 @@ lib_nave="/usr/local/lib/nave.sh"
 bin_nave="/usr/local/bin/nave"
 git_nave="https://raw.github.com/isaacs/nave/master/nave.sh"
 
-echo "Installing nave..."
+echo "⬢ Nave Installer"
 echo "See http://github.com/isaacs/nave for more information"
 echo 
 if [ -f "$bin_nave" ]; then

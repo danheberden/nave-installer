@@ -17,7 +17,11 @@ if you don't have curl, you can try `wget`:
 sh -c "$(wget -q -O - 'https://raw.github.com/danheberden/nave-installer/master/nave-installer.sh')"
 ```
 
-That's it!
+That's it! You have have [nave](http://github.com/isaacs/nave) installed. To get node installed right away, run 
+
+```
+sudo nave usemain stable
+```
 
 ## License
 Copyright (c) 2012 Dan Heberden 
