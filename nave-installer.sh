@@ -8,7 +8,7 @@ echo "                  ⬢  Nave Installer"
 tput sgr0
 
 echo "See http://github.com/isaacs/nave for more information"
-echo 
+echo
 if [ -f "$bin_nave" ]; then
   echo "$bin_nave already exists."
   echo "Stopping installation."
@@ -29,10 +29,10 @@ else
  fi;
 fi;
 BASH
-  chmod +x "$bin_nave"
+  chmod +x $bin_nave
   nave update
   echo
-  echo -ne "To update nave, just run $(tput setaf 2)nave update$(tput sgr0)"
+  echo "To update nave, just run $(tput setaf 2)nave update$(tput sgr0)"
   echo
   echo "ALL DONE!"
 fi
