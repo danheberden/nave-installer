@@ -3,7 +3,7 @@
 Installs [nave](http://github.com/isaacs/nave) easily and makes it globally accesible. Also adds `nave
 update` to get the latest nave.sh from github.com
 
-# To use
+## To use
 
 Enter this into your terminal:
 
@@ -22,6 +22,11 @@ That's it! You have have [nave](http://github.com/isaacs/nave) installed. To get
 ```
 sudo nave usemain stable
 ```
+
+## Troubleshooting
+
+If you get any error messages like `sh: cannot create /usr/local/bin/nave: Permission denied`, you'll need run
+the command as sudo. E.g., `sudo sh -c "$(curl -s 'https://raw.github.com/danheberden/nave-installer/master/nave-installer.sh')"`
 
 ## License
 Copyright (c) 2012 Dan Heberden 
